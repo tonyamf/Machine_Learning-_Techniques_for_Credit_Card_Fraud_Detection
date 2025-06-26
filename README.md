@@ -86,3 +86,4 @@ cd <repository-directory>
 ### python fraud_detection_analysis.py
 
  * The script will perform the data analysis, train the models, print the evaluation metrics to the console, and display the resulting confusion matrices and ROC curves.
+ * The paper has the original code on the appendix
