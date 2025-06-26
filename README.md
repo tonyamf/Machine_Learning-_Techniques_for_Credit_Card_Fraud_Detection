@@ -1,15 +1,18 @@
 #Comparative Analysis of Machine Learning Techniques for Credit Card Fraud Detection
 
-#Abstract
+#H1 Abstract
 This project explores and compares various machine learning strategies for handling highly imbalanced datasets, using credit card fraud detection as a case study. The analysis focuses on a well-known dataset where fraudulent transactions account for less than 0.2% of the data. We investigate several approaches, including statistical outlier detection (Mahalanobis Distance), unsupervised novelty detection (One-Class SVM), and a suite of supervised learning methods. Key supervised techniques include cost-sensitive learning with a class-weighted Support Vector Machine (SVM) and hybrid data sampling (SMOTEENN) to train multiple classifiers (SVM, Decision Tree, Naïve Bayes, KNN). Finally, these methods are benchmarked against an XGBoost ensemble model. The results demonstrate that while data sampling improves fraud recall, it significantly degrades precision. The XGBoost model, trained on the original imbalanced data, ultimately provides the best balance of precision and recall, proving to be the most robust solution.
+=============================================================================================================================
 
-#Project Overview
+#H1 Project Overview
 This repository provides a complete, executable implementation of the comparative analysis described in the paper "Imbalance Dataset Approaches and Supervised Learning Comparative Analysis: Credit Card Fraud Detection." The primary goal is to determine the most effective machine learning strategy for identifying fraudulent credit card transactions from a dataset with a severe class imbalance.
+============================================================================================================v================
 
 #Key Questions Explored:
 How do unsupervised, statistical, and supervised methods compare in fraud detection?
 Is it more effective to use class-weighting to penalize errors on the minority class or to resample the data to be balanced?
 Can a powerful ensemble method like XGBoost outperform other models on either the original or a balanced dataset?
+
 
 #Data Source
 The study uses the public "Credit Card Fraud Detection" dataset, originally from Kaggle. The dataset contains transactions made by European cardholders in September 2013.
