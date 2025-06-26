@@ -1,6 +1,7 @@
-#Comparative Analysis of Machine Learning Techniques for Credit Card Fraud Detection
+# H1 Comparative Analysis of Machine Learning Techniques for Credit Card Fraud Detection
 
-#H1 Abstract
+## H2 Abstract
+
 This project explores and compares various machine learning strategies for handling highly imbalanced datasets, using credit card fraud detection as a case study. The analysis focuses on a well-known dataset where fraudulent transactions account for less than 0.2% of the data. We investigate several approaches, including statistical outlier detection (Mahalanobis Distance), unsupervised novelty detection (One-Class SVM), and a suite of supervised learning methods. Key supervised techniques include cost-sensitive learning with a class-weighted Support Vector Machine (SVM) and hybrid data sampling (SMOTEENN) to train multiple classifiers (SVM, Decision Tree, Naïve Bayes, KNN). Finally, these methods are benchmarked against an XGBoost ensemble model. The results demonstrate that while data sampling improves fraud recall, it significantly degrades precision. The XGBoost model, trained on the original imbalanced data, ultimately provides the best balance of precision and recall, proving to be the most robust solution.
 =============================================================================================================================
 
