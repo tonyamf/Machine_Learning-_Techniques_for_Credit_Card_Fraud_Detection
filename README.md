@@ -69,10 +69,10 @@ git clone <repository-url>
 cd <repository-directory>
 ```
 
-#Install Dependencies: Make sure you have the required Python packages installed.
-#pip install pandas scikit-learn matplotlib seaborn imbalanced-learn xgboost scikit-optimize
-#Place Data File: Ensure creditcard.csv is in the same directory as the Python script.
-#Execute the Script: Run the analysis from your terminal.
+⋅⋅⋅⋅* Install Dependencies: Make sure you have the required Python packages installed.
+⋅⋅⋅⋅* pip install pandas scikit-learn matplotlib seaborn imbalanced-learn xgboost scikit-optimize
+⋅⋅⋅⋅* Place Data File: Ensure creditcard.csv is in the same directory as the Python script.
+⋅⋅⋅⋅* Execute the Script: Run the analysis from your terminal.
 
 #python fraud_detection_analysis.py
 
