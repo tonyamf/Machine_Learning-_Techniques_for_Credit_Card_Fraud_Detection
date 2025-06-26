@@ -4,7 +4,9 @@
 
 ## Abstract
 
-This project explores and compares various machine learning strategies for handling highly imbalanced datasets, using credit card fraud detection as a case study. The analysis focuses on a well-known dataset where fraudulent transactions account for less than 0.2% of the data. We investigate several approaches, including statistical outlier detection (Mahalanobis Distance), unsupervised novelty detection (One-Class SVM), and a suite of supervised learning methods. Key supervised techniques include cost-sensitive learning with a class-weighted Support Vector Machine (SVM) and hybrid data sampling (SMOTEENN) to train multiple classifiers (SVM, Decision Tree, Naïve Bayes, KNN). Finally, these methods are benchmarked against an XGBoost ensemble model. The results demonstrate that while data sampling improves fraud recall, it significantly degrades precision. The XGBoost model, trained on the original imbalanced data, ultimately provides the best balance of precision and recall, proving to be the most robust solution.
+This project explores and compares various machine learning strategies for handling highly imbalanced datasets, using credit card fraud detection as a case study. The analysis focuses on a well-known dataset where fraudulent transactions account for less than 0.2% of the data. We investigate several approaches, including statistical outlier detection (Mahalanobis Distance), unsupervised novelty detection (One-Class SVM), and a suite of supervised learning methods. 
+
+Key supervised techniques include cost-sensitive learning with a class-weighted Support Vector Machine (SVM) and hybrid data sampling (SMOTEENN) to train multiple classifiers (SVM, Decision Tree, Naïve Bayes, KNN). Finally, these methods are benchmarked against an XGBoost ensemble model. The results demonstrate that while data sampling improves fraud recall, it significantly degrades precision. The XGBoost model, trained on the original imbalanced data, ultimately provides the best balance of precision and recall, proving to be the most robust solution.
 
 
 
@@ -16,20 +18,20 @@ This repository provides a complete, executable implementation of the comparativ
 
 ## Key Questions Explored:
 
-How do unsupervised, statistical, and supervised methods compare in fraud detection?
-Is it more effective to use class-weighting to penalize errors on the minority class or to resample the data to be balanced?
-Can a powerful ensemble method like XGBoost outperform other models on either the original or a balanced dataset?
+ * How do unsupervised, statistical, and supervised methods compare in fraud detection?
+ * Is it more effective to use class-weighting to penalize errors on the minority class or to resample the data to be balanced?
+ * Can a powerful ensemble method like XGBoost outperform other models on either the original or a balanced dataset?
 
 
 
 ## Data Source
 
-The study uses the public "Credit Card Fraud Detection" dataset, originally from Kaggle. The dataset contains transactions made by European cardholders in September 2013.
-It consists of 284,807 transactions, of which only 492 (0.172%) are fraudulent.
-To protect user privacy, the original features have been transformed via Principal Component Analysis (PCA) into 28 numerical features (V1 to V28).
-The only features that remain untransformed are Time (seconds elapsed since the first transaction) and Amount (transaction amount).
-The target variable is Class, where 1 indicates fraud and 0 indicates a legitimate transaction.
-A copy of the dataset (creditcard.csv) is included in this repository.
+ * The study uses the public "Credit Card Fraud Detection" dataset, originally from Kaggle. The dataset contains transactions made by European cardholders in September 2013.
+ * It consists of 284,807 transactions, of which only 492 (0.172%) are fraudulent.
+ * To protect user privacy, the original features have been transformed via Principal Component Analysis (PCA) into 28 numerical features (V1 to V28).
+ * The only features that remain untransformed are Time (seconds elapsed since the first transaction) and Amount (transaction amount).
+ * The target variable is Class, where 1 indicates fraud and 0 indicates a legitimate transaction.
+ * A copy of the dataset (creditcard.csv) is included in this repository.
 
 
 
@@ -76,11 +78,11 @@ git clone <repository-url>
 cd <repository-directory>
 ```
 
-⋅⋅⋅⋅* Install Dependencies: Make sure you have the required Python packages installed.
-⋅⋅⋅⋅* pip install pandas scikit-learn matplotlib seaborn imbalanced-learn xgboost scikit-optimize
-⋅⋅⋅⋅* Place Data File: Ensure creditcard.csv is in the same directory as the Python script.
-⋅⋅⋅⋅* Execute the Script: Run the analysis from your terminal.
+ * Install Dependencies: Make sure you have the required Python packages installed.
+ * pip install pandas scikit-learn matplotlib seaborn imbalanced-learn xgboost scikit-optimize
+ * Place Data File: Ensure creditcard.csv is in the same directory as the Python script.
+ * Execute the Script: Run the analysis from your terminal.
 
-#python fraud_detection_analysis.py
+### python fraud_detection_analysis.py
 
-The script will perform the data analysis, train the models, print the evaluation metrics to the console, and display the resulting confusion matrices and ROC curves.
+ * The script will perform the data analysis, train the models, print the evaluation metrics to the console, and display the resulting confusion matrices and ROC curves.
