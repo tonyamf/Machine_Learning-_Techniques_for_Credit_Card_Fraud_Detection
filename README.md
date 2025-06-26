@@ -39,8 +39,8 @@ A copy of the dataset (creditcard.csv) is included in this repository.
 
 #### Statistical & Unsupervised Methods:
 
-  ⋅⋅⋅⋅* Mahalanobis Distance: A statistical method to detect multivariate outliers. It showed poor performance, struggling to distinguish the weak outliers present in this dataset.
-  ⋅⋅⋅⋅⋅* One-Class SVM: An unsupervised algorithm for novelty detection. It also performed poorly, with an F1-score of only 0.02 for the fraud class.
+  ⋅⋅⋅⋅ Mahalanobis Distance: A statistical method to detect multivariate outliers. It showed poor performance, struggling to distinguish the weak outliers present in this dataset.
+  ⋅⋅⋅⋅⋅ One-Class SVM: An unsupervised algorithm for novelty detection. It also performed poorly, with an F1-score of only 0.02 for the fraud class.
 
 #### Supervised Methods: This was the main focus of the analysis.
 
