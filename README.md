@@ -39,22 +39,22 @@ A copy of the dataset (creditcard.csv) is included in this repository.
 
 #### Statistical & Unsupervised Methods:
 
-  ⋅⋅⋅⋅ Mahalanobis Distance: A statistical method to detect multivariate outliers. It showed poor performance, struggling to distinguish the weak outliers present in this dataset.
-  ⋅⋅⋅⋅⋅ One-Class SVM: An unsupervised algorithm for novelty detection. It also performed poorly, with an F1-score of only 0.02 for the fraud class.
+  * Mahalanobis Distance: A statistical method to detect multivariate outliers. It showed poor performance, struggling to distinguish the weak outliers present in this dataset.
+  * One-Class SVM: An unsupervised algorithm for novelty detection. It also performed poorly, with an F1-score of only 0.02 for the fraud class.
 
 #### Supervised Methods: This was the main focus of the analysis.
 
-  ⋅⋅⋅⋅* Cost-Sensitive Learning (Weighted SVM): By assigning a higher penalty to misclassifying fraud, the SVM's recall for fraud jumped to 85%. However, its precision was very low (8%), meaning it generated many false positives.
+  * Cost-Sensitive Learning (Weighted SVM): By assigning a higher penalty to misclassifying fraud, the SVM's recall for fraud jumped to 85%. However, its precision was very low (8%), meaning it generated many false positives.
 
 #### Hybrid Data Sampling (SMOTEENN):
 
-  ⋅⋅⋅⋅* The training data was balanced using SMOTE (to create synthetic fraud examples) and Edited Nearest Neighbours (to remove ambiguous majority-class examples).
-  ⋅⋅⋅⋅* Models trained on this balanced data (SVM, Decision Tree, KNN, Naïve Bayes) generally showed high recall for fraud but suffered from low precision.
+  *  The training data was balanced using SMOTE (to create synthetic fraud examples) and Edited Nearest Neighbours (to remove ambiguous majority-class examples).
+  *  Models trained on this balanced data (SVM, Decision Tree, KNN, Naïve Bayes) generally showed high recall for fraud but suffered from low precision.
 
 #### Ensemble Learning (XGBoost):
 
-  ⋅⋅⋅⋅* When trained on the original imbalanced data, XGBoost was the clear winner. It achieved an excellent AUC of 0.985 and a high F1-score for fraud detection while maintaining high precision on normal transactions.
-  ⋅⋅⋅⋅* Training XGBoost on the sampled data slightly improved fraud recall but significantly worsened precision, confirming that sampling introduced a negative bias for this powerful model.
+  *  When trained on the original imbalanced data, XGBoost was the clear winner. It achieved an excellent AUC of 0.985 and a high F1-score for fraud detection while maintaining high precision on normal transactions.
+  * Training XGBoost on the sampled data slightly improved fraud recall but significantly worsened precision, confirming that sampling introduced a negative bias for this powerful model.
 
 ## Conclusion
 
