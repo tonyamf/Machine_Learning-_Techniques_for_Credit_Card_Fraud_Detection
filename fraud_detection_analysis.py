@@ -20,6 +20,7 @@
 import pandas as pd
 import numpy as np
 import time
+from collections import Counter
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -215,7 +216,6 @@ def main():
         objective='binary:logistic',
         eval_metric='auc',
         scale_pos_weight=scale_pos_weight,
-        use_label_encoder=False,
         random_state=RANDOM_STATE
     )
     
@@ -233,6 +233,5 @@ def main():
     print("\n--- Analysis Complete ---")
 
 if __name__ == '__main__':
-    from collections import Counter
     main()
 

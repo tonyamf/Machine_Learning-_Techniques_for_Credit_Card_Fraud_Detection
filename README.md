@@ -31,7 +31,7 @@ This repository provides a complete, executable implementation of the comparativ
  * To protect user privacy, the original features have been transformed via Principal Component Analysis (PCA) into 28 numerical features (V1 to V28).
  * The only features that remain untransformed are Time (seconds elapsed since the first transaction) and Amount (transaction amount).
  * The target variable is Class, where 1 indicates fraud and 0 indicates a legitimate transaction.
- * A copy of the dataset (creditcard.csv) is included in this repository.
+ * The dataset file (`creditcard.csv`, ~150 MB) is **not** included in this repository. Download it from Kaggle ("Credit Card Fraud Detection", a free Kaggle login is required) and place it next to the script.
 
 
 
@@ -70,20 +70,30 @@ Redundant code for plotting and evaluation has been refactored into reusable fun
 
 The script focuses on the most critical comparisons discussed in the paper: the class-weighted SVM, the hybrid-sampled SVM, and the XGBoost models.
 
-How to Run the Analysis
-Clone the Repository:
+## How to run
 
-```git
-git clone <repository-url>
-cd <repository-directory>
+Tested with Python 3.11 (see `requirements.txt` for the pinned versions).
+
+```bash
+python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+# put creditcard.csv (from Kaggle) in this folder, then:
+python fraud_detection_analysis.py                      # prints metrics, shows confusion matrices and ROC curves
+jupyter nbconvert --to notebook --execute notebook_alternative.ipynb --output out.ipynb   # the exploratory notebook
 ```
 
- * Install Dependencies: Make sure you have the required Python packages installed.
- * pip install pandas scikit-learn matplotlib seaborn imbalanced-learn xgboost scikit-optimize
- * Place Data File: Ensure creditcard.csv is in the same directory as the Python script.
- * Execute the Script: Run the analysis from your terminal.
+* Without a display, run the script with `MPLBACKEND=Agg` so the plots do not block.
+* The script runs three experiments (class-weighted SVM, SMOTEENN + SVM, XGBoost). The One-Class SVM and Mahalanobis experiments from the paper are not in the script.
+* The notebook is the original exploratory work and is slow on the full dataset (the saved outputs show runs of up to ~1 hour per cell). Its saved outputs come from the original run.
 
-### python fraud_detection_analysis.py
+## About the numbers in this README
 
- * The script will perform the data analysis, train the models, print the evaluation metrics to the console, and display the resulting confusion matrices and ROC curves.
- * The paper has the original code on the appendix
+All figures above (AUC 0.985, SVM recall 85% / precision 8%, One-Class SVM F1 0.02, ...) are taken from the tables of the coursework report in this repository (`9870776MLCoursework.pdf`). They were **not** re-produced when the code was last fixed, because `creditcard.csv` is not in the repository. After the fix the script and notebook were only smoke-tested on a small randomly generated table with the same columns (no meaningful metrics). The script uses its own 70/30 stratified split, so its output may differ from the report's tables.
+
+## Corrections and Code Notes
+
+The Python code has been consolidated from the paper's appendix and a supplementary notebook into a single executable script (`fraud_detection_analysis.py`).
+
+* `unicodecsv` was replaced with pandas, and redundant plotting/evaluation code was refactored into reusable functions.
+* The script focuses on the most critical comparisons discussed in the paper: the class-weighted SVM, the hybrid-sampled SVM, and the XGBoost model.
+* The paper has the original code in its appendix.
