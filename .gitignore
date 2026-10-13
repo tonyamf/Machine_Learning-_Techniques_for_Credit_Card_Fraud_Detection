@@ -8,3 +8,4 @@ out/
 .venv/
 creditcard.csv
 out.ipynb
+.pytest_cache/
